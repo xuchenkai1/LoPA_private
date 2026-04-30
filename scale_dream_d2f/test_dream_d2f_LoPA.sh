@@ -51,7 +51,7 @@ humaneval_verification_force_base_winners="false false false"
 base_model=Dream-v0-Instruct-7B
 
 lora_models=(
-    "SJTU-Deng-Lab/D2F_Dream_Instruct_7B_Lora"
+    "organization/D2F_Dream_Instruct_7B_Lora"
 )
 
 # Create arrays from space-separated strings

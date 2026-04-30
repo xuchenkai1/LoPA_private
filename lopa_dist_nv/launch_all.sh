@@ -11,7 +11,7 @@ export HF_EVALUATE_OFFLINE=1
 export TRANSFORMERS_OFFLINE=1
 export WANDB_DISABLED=true
 
-export HF_HOME="/root/workspace/jyj/LoPA/cache"
+export HF_HOME="${HF_HOME:-$(pwd)/cache}"
 export HF_DATASETS_CACHE="$HF_HOME/datasets"
 export HF_METRICS_CACHE="$HF_HOME/metrics"
 export CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7
@@ -41,19 +41,19 @@ MODES=(
 
 # Define branch sizes to run: 4 then 8
 BRANCH_SIZES=(4 8)
-MODEL_DIR_PATH=/root/data/ckpts
+MODEL_DIR_PATH="${MODEL_DIR_PATH:-/path/to/model_checkpoints}"
 for MODE in "${MODES[@]}"; do
     # --- Set model paths for the current mode ---
     export RUN_MODE="$MODE"
     
     if [ "$RUN_MODE" = "instruct" ]; then
         echo ">>> Setting up for INSTRUCT mode..."
-        export MODEL_PRETRAINED="$MODEL_DIR_PATH/Dream-org/Dream-v0-Instruct-7B"
-        export MODEL_LORA_PATH_DEFAULT="$MODEL_DIR_PATH/SJTU-Deng-Lab/D2F_Dream_v0_Instruct_LoRA"
+        export MODEL_PRETRAINED="$MODEL_DIR_PATH/Dream-v0-Instruct-7B"
+        export MODEL_LORA_PATH_DEFAULT="$MODEL_DIR_PATH/D2F_Dream_v0_Instruct_LoRA"
     elif [ "$RUN_MODE" = "base" ]; then
         echo ">>> Setting up for BASE mode..."
-        export MODEL_PRETRAINED="$MODEL_DIR_PATH/Dream-org/Dream-v0-Base-7B"
-        export MODEL_LORA_PATH_DEFAULT="$MODEL_DIR_PATH/SJTU-Deng-Lab/D2F_Dream_v0_Base_Lora"
+        export MODEL_PRETRAINED="$MODEL_DIR_PATH/Dream-v0-Base-7B"
+        export MODEL_LORA_PATH_DEFAULT="$MODEL_DIR_PATH/D2F_Dream_v0_Base_Lora"
     else
         echo "Error: Unknown mode $RUN_MODE"
         exit 1
