@@ -13,13 +13,10 @@
 # limitations under the License.
 #
 # SPDX-License-Identifier: Apache-2.0
-# Modified from Dream repos: https://github.com/HKUNLP/Dream
-
 import evaluate as hf_evaluate
 import os
 import sys
 from sanitize import sanitize
-os.environ["HF_ENDPOINT"] = "https://hf-mirror.com"
 os.environ["HF_ALLOW_CODE_EVAL"] = "1"
 pass_at_k = hf_evaluate.load("code_eval")
 

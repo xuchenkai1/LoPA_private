@@ -42,7 +42,6 @@ for ds in "${DATASETS[@]}"; do
   mkdir -p "${OUTPUT_DIR}/${ds}"
 done
 
-export HF_ENDPOINT=https://hf-mirror.com
 export PATH=./vllm/bin:$PATH
 
 MODEL_COMBINED_PATH="${BASE_MODEL_PATH},${LORA_PATH}"

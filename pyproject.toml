@@ -25,7 +25,3 @@ dependencies = [
 
 [tool.setuptools.packages.find]
 include = []
-
-[[tool.uv.index]]
-url = "https://mirrors.aliyun.com/pypi/simple"
-default = true

@@ -16,7 +16,6 @@ DECODED_TOKEN_THRESHOLD=0.95
 mkdir -p "${OUTPUT_DIR}"/humaneval
 mkdir -p "${OUTPUT_DIR}"/mbpp
 
-export HF_ENDPOINT=https://hf-mirror.com
 export PATH=./vllm/bin:$PATH
 # export PYTHONPATH=$PYTHONPATH:./eval_plus/evalplus
 # pip install datamodel_code_generator anthropic mistralai google-generativeai

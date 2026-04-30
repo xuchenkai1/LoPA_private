@@ -13,8 +13,6 @@
 # limitations under the License.
 #
 # SPDX-License-Identifier: Apache-2.0
-# Modified from Dream repos: https://github.com/HKUNLP/Dream
-
 import evaluate as hf_evaluate
 import os
 import sys

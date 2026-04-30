@@ -13,8 +13,6 @@
 # limitations under the License.
 #
 # SPDX-License-Identifier: Apache-2.0
-# Modified from Dream repos: https://github.com/HKUNLP/Dream
-
 """Post-processing LLM-generated Python code implemented using tree-sitter."""
 
 import os
